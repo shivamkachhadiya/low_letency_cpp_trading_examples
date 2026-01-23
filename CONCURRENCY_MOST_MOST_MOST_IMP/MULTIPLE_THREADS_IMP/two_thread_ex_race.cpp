@@ -14,7 +14,9 @@ void download1()
 {
     for (int i = 0; i < SIZE; i++)
     {
+        // lock
         lt.push_back(i);
+        // unlock
     }
 }
 
@@ -28,11 +30,16 @@ void download2()
 
 int main()
 {
+
     thread th1(download1);
     thread th2(download2);
-    th1.join();
 
+    th1.join();
+    // ensure thread complete ....//
     th2.join();
+   // cout << "main is free now";
+
     cout << lt.size() << endl;
+
     return 0;
 }

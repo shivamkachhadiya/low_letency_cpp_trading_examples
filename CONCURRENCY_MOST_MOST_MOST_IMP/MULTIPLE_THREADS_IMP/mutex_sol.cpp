@@ -36,7 +36,6 @@ int main()
     thread th1(download1);
     thread th2(download2);
     th1.join();
-
     th2.join();
     cout << lt.size() << endl;
     return 0;
